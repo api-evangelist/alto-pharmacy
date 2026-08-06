@@ -1,8 +1,18 @@
 aid: alto-pharmacy
 name: Alto Pharmacy
-description: 'Alto Pharmacy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Alto Pharmacy is a San Francisco-based digital pharmacy and pharmacy-technology
+  company (founded 2015 as ScriptDash) that combines a full-service licensed pharmacy
+  with a proprietary pharmacy operating system, Alto OS. Alto fills retail, specialty
+  and fertility prescriptions with same-day courier delivery, pharmacist care and
+  automated benefits investigation, and it sells that stack to industry partners as
+  Alto Hub+, Alto Dispensing and Alto Complete — hub services, dispensing and end-to-end
+  pharmacy-as-a-service for pharmaceutical manufacturers, health plans, health systems
+  and digital health companies. Alto markets intake, transfer and Surescripts-based
+  integrations to those partners, but publishes no public developer portal, API
+  documentation or machine-readable specification; technical access runs through its
+  partnerships team.'
 url: https://raw.githubusercontent.com/api-evangelist/alto-pharmacy/refs/heads/main/apis.yml
+image: https://www.alto.com/logo
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +22,15 @@ created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Pharmacy
+- Digital Health
+- Healthcare
+- Prescriptions
+- Specialty Pharmacy
+- Fertility
+- Medication Delivery
+- Pharmacy Technology
+- Health Plans
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,51 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/alto-pharmacy-domain-security.yml
+- type: LLMsTxt
+  url: llms/alto-pharmacy-llms.txt
 - type: Website
+  url: https://www.alto.com/
+- type: Blog
+  url: https://www.alto.com/blog
+- type: GitHubOrganization
+  url: https://github.com/scriptdash
+- type: Support
+  url: https://www.alto.com/contact
+- type: TermsOfService
+  url: https://www.alto.com/legal/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.alto.com/legal/privacy
+- type: SecondaryMarket
   url: https://forgeglobal.com/alto-pharmacy_stock/
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: Alto's Partner Solutions page advertises "intake and transfer APIs" and "Surescripts
+    or transfer API intake" but routes every technical inquiry to partnerships@alto.com
+    — there is no developer portal, no API reference and no spec anywhere on alto.com,
+    and the live API host api.alto.com answers a bare plaintext "404 page not found"
+    on every documented path while serving 200 only on /healthz.
+  evidence:
+  - url: https://www.alto.com/blog/post/partner-solutions
+    status: 200
+  - url: https://api.alto.com/openapi.json
+    status: 404
+  - url: https://api.alto.com/healthz
+    status: 200
+  - url: https://api.alto.com/graphql
+    status: 404
+  - url: https://www.alto.com/llms.txt
+    status: 404
+  - url: https://www.alto.com/.well-known/agent-card.json
+    status: 404
+  - url: https://developer.alto.com/
+    status: 0
+  checked: '2026-08-06'
+

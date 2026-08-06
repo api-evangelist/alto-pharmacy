@@ -1,0 +1,48 @@
+generated: '2026-08-06'
+method: probed
+source: live GET of /.well-known/* on every Alto Pharmacy host reachable without credentials
+summary: >-
+  No .well-known discovery document was found on any Alto Pharmacy host. api.alto.com
+  and www.alto.com return hard 404s for every path probed. app.alto.com is a
+  single-page-application catch-all that answers HTTP 200 with an HTML shell for every
+  /.well-known/* path — those 200s are NOT documents and are recorded here as
+  false-positive rejections so a later round does not re-credit them.
+documents: []
+hosts:
+- host: https://api.alto.com
+  note: live Go/gateway host; plaintext "404 page not found" on every path except /healthz (200)
+  probes:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://www.alto.com
+  probes:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://providers.alto.com
+  note: Alto Connect clinical/partner portal (Next.js); HTML 404 page on every probe
+  probes:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://app.alto.com
+  note: >-
+    SPA catch-all — returns HTTP 200 with an HTML document (<!doctype html>) for EVERY
+    path including /openapi.json and /llms.txt. Rejected: no body parsed as JSON or as
+    an AgentCard object.
+  probes:
+  - {path: /.well-known/security.txt, status: 200, rejected: html-spa-catchall}
+  - {path: /.well-known/openid-configuration, status: 200, rejected: html-spa-catchall}
+  - {path: /.well-known/oauth-authorization-server, status: 200, rejected: html-spa-catchall}
+  - {path: /.well-known/api-catalog, status: 200, rejected: html-spa-catchall}
+  - {path: /.well-known/agent-card.json, status: 200, rejected: html-spa-catchall}
+  - {path: /.well-known/agent.json, status: 200, rejected: html-spa-catchall}

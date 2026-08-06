@@ -1,0 +1,64 @@
+# Alto Pharmacy
+
+> Alto Pharmacy is a San Francisco digital pharmacy and pharmacy-technology company
+> (founded 2015 as ScriptDash). It runs a licensed full-service pharmacy on its own
+> pharmacy operating system, Alto OS, delivering retail, specialty and fertility
+> prescriptions with same-day courier delivery, pharmacist care and automated benefits
+> investigation — and it licenses that stack to pharmaceutical manufacturers, health
+> plans, health systems and digital health companies as Alto Hub+, Alto Dispensing and
+> Alto Complete.
+
+**API status: no public API.** Alto markets "intake and transfer APIs", "API integrations"
+and "Surescripts or transfer API intake" to partners, but publishes no developer portal,
+no API reference, no OpenAPI/AsyncAPI/GraphQL contract, no SDK and no sandbox. Technical
+access is arranged through the partnerships team (partnerships@alto.com). Probes of
+api.alto.com, www.alto.com, providers.alto.com and app.alto.com found no machine-readable
+contract and no /.well-known discovery document as of 2026-08-06.
+
+## Company
+- [Alto Pharmacy](https://www.alto.com/): Home.
+- [About Alto](https://www.alto.com/about-alto): Company overview and leadership.
+- [Our Story](https://www.alto.com/our-story): Founding and mission.
+- [Press](https://www.alto.com/press): Press releases and coverage.
+- [Blog](https://www.alto.com/blog): Company, product, industry and engineering posts.
+
+## Platform and partner products
+- [Technologies](https://www.alto.com/technologies): Alto OS, Alto Connect and the partner platform.
+- [Alto Hub+](https://www.alto.com/technologies/alto-hub): Hub services — benefits investigation, prior authorization, billing optimization.
+- [Alto Dispensing](https://www.alto.com/technologies/alto-dispensing): Retail and specialty dispensing with home delivery.
+- [Alto Complete](https://www.alto.com/technologies/alto-complete): End-to-end hub plus dispensing.
+- [Partner Solutions](https://www.alto.com/blog/post/partner-solutions): The partnership tiers that name the intake/transfer APIs. Sales-gated.
+
+## Clinicians and patients
+- [For Providers](https://www.alto.com/for-providers): Prescriber-facing overview.
+- [Provider Onboarding](https://www.alto.com/provider-onboarding): Prescriber sign-up.
+- [Alto Connect](https://providers.alto.com/): Clinical team and partner portal. Login required.
+- [How Alto Works](https://www.alto.com/how-alto-works): Patient flow.
+- [Cost and Insurance](https://www.alto.com/cost-and-insurance): Pricing and benefits.
+- [FAQs](https://www.alto.com/faqs): Common questions.
+
+## Engineering
+- [Engineering blog](https://www.alto.com/blog/engineering): Posts from the Alto engineering team.
+- [GitHub — scriptdash](https://github.com/scriptdash): Alto's public GitHub organization (44 public repositories, all forks of third-party open source; no first-party API artifact published).
+
+## Legal and privacy
+- [Terms and Conditions](https://www.alto.com/legal/terms-and-conditions)
+- [Privacy Notice](https://www.alto.com/legal/privacy)
+- [HIPAA Notice of Privacy Practices](https://www.alto.com/legal/npp)
+- [Patient Rights](https://www.alto.com/legal/patient-rights)
+- [Alto Connect Terms and Conditions](https://www.alto.com/legal/alto-connect-terms-and-conditions)
+
+## Contact
+- [Contact Alto](https://www.alto.com/contact): General support.
+- partnerships@alto.com — partner and integration inquiries.
+- engineering@alto.com — listed on the scriptdash GitHub organization.
+
+## API Evangelist profile
+- [Alto Pharmacy on APIs.io](https://apis.io/provider/alto-pharmacy/)
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/alto-pharmacy/refs/heads/main/apis.yml)
+- [Domain security probe](https://raw.githubusercontent.com/api-evangelist/alto-pharmacy/refs/heads/main/security/alto-pharmacy-domain-security.yml)
+
+---
+generated: 2026-08-06
+method: generated
+source: apis.yml + www.alto.com sitemap.xml + live host probes (no provider-published llms.txt exists)
